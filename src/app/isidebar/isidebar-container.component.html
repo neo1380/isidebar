@@ -1,0 +1,14 @@
+<div *ngIf="showBackdrop"
+aria-hidden="true"
+class="isidebar__backdrop"
+[ngClass]="backdropClass"
+(click)="_onBackdropClicked()"></div>
+
+<ng-content select="isidebar,[isidebar]"></ng-content>
+
+<div class="isidebar__content"
+[class.isidebar__content--animate]="animate"
+[ngClass]="contentClass"
+[ngStyle]="_getContentStyle()">
+<ng-content select="[isidebar-content]"></ng-content>
+</div>
